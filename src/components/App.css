@@ -1,0 +1,7 @@
+.App {
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    height: 100vh;
+}

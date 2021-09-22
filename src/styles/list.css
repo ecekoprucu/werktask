@@ -1,0 +1,22 @@
+.border-white {
+    border: 1px solid white;
+}
+
+.border-yellow {
+    border: 1px solid yellow;
+}
+
+.border-green {
+    border: 1px solid green;
+}
+
+.lightgray {
+    background-color: #797777;
+    padding: 5px
+}
+
+.darkgray {
+    background-color: #3c3c3c;
+    padding: 5px
+}
+

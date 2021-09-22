@@ -1,0 +1,14 @@
+.todo {
+    color: white;
+    border-color: white;
+}
+
+.in-progress {
+    color: yellow;
+    border-color: yellow;
+}
+
+.done {
+    color: green;
+    border-color: green;
+}
