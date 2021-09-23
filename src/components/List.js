@@ -18,7 +18,7 @@ const List = ({title, cards, listId}) => {
                     )
                 }}
             </Droppable>
-            <Button type='inlineButton' listId={listId} />
+            <Button type='inlineButton' action="add" formOpen={false} listId={listId} />
         </div>
     )
 }

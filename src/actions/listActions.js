@@ -19,3 +19,10 @@ export const sort = (droppableIdStart, droppableIdEnd, droppableIndexStart, drop
         }
     }
 }
+
+export const edit = (cardId, text) => {
+    return {
+        type: CONSTANTS.EDIT_CARD,
+        payload: {cardId, text}
+    }
+}

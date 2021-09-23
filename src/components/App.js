@@ -22,7 +22,7 @@ function App (props) {
        <DragDropContext onDragEnd={onDragEnd}>
            <div className="App">
                {list.map(list => <List key={list.id} listId={list.id} title={list.title} cards={list.cards}/> )}
-               <Button type="outerButton" listList={list} />
+               <Button type="outerButton" action="add" openForm={false} listList={list} />
            </div>
        </DragDropContext>
     );

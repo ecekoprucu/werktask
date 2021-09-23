@@ -1,17 +1,21 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
-import {addCard} from '../actions';
+import {addCard, edit} from '../actions';
 import '../styles/button.css';
 
 const Button = (props) => {
     const [state, setState] = useState({
-        formOpen: false,
-        text: '',
+        formOpen: props.openForm,
+        text: !props.text ? '' : props.text,
         list: props.listId ? props.listId : 0
     })
-    const showButton = () => (
-        <button style={props.type === 'inlineButton' ? styles.button : styles.secondButton} onClick={openForm}> {props.type === 'inlineButton' ? '+ Add' : 'New Task'}</button>
-    )
+    const showButton = () => {
+        if(props.action!=='edit') {
+            return <button style={props.type === 'inlineButton' ? styles.button : styles.secondButton} onClick={openForm}> {props.type === 'inlineButton' ? '+ Add' : 'New Task'}</button>
+        } else return null;
+    }
+
+
 
     function handleChange (e) {
         setState({...state, text: e.target.value})
@@ -34,6 +38,15 @@ const Button = (props) => {
         }
     }
 
+    function handleEditCard () {
+        const {dispatch} = props;
+        const {text} = state;
+
+        if(text!== '') {
+            dispatch(edit(props.cardId, text));
+        }
+    }
+
     const showForm = ({type}) => {
         const placeholder = type==='edit' ? state.text : 'Add task';
         return (
@@ -48,7 +61,7 @@ const Button = (props) => {
                     ) : null
                 }
                 <input type="text" value={state.text} style={styles.input} onChange={handleChange} placeholder={placeholder}/>
-                <button style={{...styles.secondButton, alignSelf: 'flex-end'}} onClick={handleAddCard}>Save</button>
+                <button style={{...styles.secondButton, alignSelf: 'flex-end'}} onClick={type === 'edit' ? handleEditCard : handleAddCard}>Save</button>
                 <button style={{height: 25, position: "absolute", right: 25, borderRadius: '100%'}} onClick={closeForm}>X</button>
             </div>
         )
@@ -56,7 +69,7 @@ const Button = (props) => {
 
     return (
         <div>
-            {state.formOpen ? showForm({type:'add'}) : showButton()}
+            {state.formOpen ? showForm({type:props.action}) : showButton()}
         </div>
     )
 }
