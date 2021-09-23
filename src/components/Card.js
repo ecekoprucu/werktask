@@ -33,7 +33,7 @@ const styles = {
         borderColor: '#fff',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-around'
+        justifyContent: 'space-between'
     },
     handle: {
         width: 20,
