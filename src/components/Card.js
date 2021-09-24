@@ -6,7 +6,7 @@ import Button from "./Button";
 const Card = ({text, cardId, index, listId}) => {
     const [show, setShow] = useState(false);
     return (
-        <div>
+        <div style={{borderBottom: '1px solid #676666'}}>
             <Draggable draggableId={cardId.toString()} index={index}>
                 {(provided) => {
                     return (
@@ -38,7 +38,7 @@ const styles = {
         borderColor: '#fff',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     handle: {
         width: 20,
