@@ -5,9 +5,13 @@ import {Droppable} from "react-beautiful-dnd";
 import '../styles/list.css';
 
 const List = ({title, cards, listId}) => {
-    return (
+    return cards.length > 0 ? (
         <div>
-            <h4 style={styles.title} className={listId===0 ? 'border-white' : listId === 1 ? 'border-yellow' : 'border-green'}>{title}</h4>
+            <div style={styles.title} className={listId===0 ? 'border-white' : listId === 1 ? 'border-orange' : 'border-green'}>{title}
+                <span>
+                    {cards.length}
+                </span>
+            </div>
             <Droppable droppableId={listId.toString()}>
                 {(provided) => {
                     return (
@@ -18,9 +22,19 @@ const List = ({title, cards, listId}) => {
                     )
                 }}
             </Droppable>
-            <Button type='inlineButton' action="add" formOpen={false} listId={listId} />
+            <Button type='inlineButton' action="add" formOpen={false} listType={listId} listId={listId} />
         </div>
-    )
+    ) : <div style={{width: 300}}>
+            <div style={styles.title} className={listId===0 ? 'border-white' : listId === 1 ? 'border-orange' : 'border-green'}>
+                {title}
+                <span>
+                        {cards.length}
+                </span>
+            </div>
+           <div style={{width: '100%', border: '1px dashed #474646', padding: '1em'}}>
+               <Button type='inlineButton' action="add" formOpen={false} listType={listId} listId={listId} />
+           </div>
+         </div>
 }
 
 const styles = {
@@ -32,7 +46,10 @@ const styles = {
         color: '#fff',
         padding: '1em',
         width: '50%',
-        borderRadius: 5
+        borderRadius: 5,
+        marginBottom: '1em',
+        display: 'flex',
+        justifyContent: 'space-between'
     }
 }
 

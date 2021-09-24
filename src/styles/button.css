@@ -4,11 +4,15 @@
 }
 
 .in-progress {
-    color: yellow;
-    border-color: yellow;
+    color: orange;
+    border-color: orange;
 }
 
 .done {
     color: green;
     border-color: green;
+}
+
+.configure-width {
+    width: 60%;
 }
