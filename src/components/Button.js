@@ -112,8 +112,8 @@ const styles = {
         background: 'linear-gradient(97.24deg, #234CA7 -24.31%, #EA596E 131.07%)',
         border: 0,
         color: '#fff',
-        padding: 10,
-        borderRadius: 8,
+        padding: '10px 15px',
+        borderRadius: 4,
         cursor: 'pointer'
 },
     container: {
@@ -183,7 +183,9 @@ const styles = {
         display: 'flex',
         gap: '5em',
         borderBottom: '1px solid gray',
-        paddingBottom: '1em'
+        paddingBottom: '1em',
+        fontSize: 14,
+        lineHeight: '21px'
     },
     contentDetail: {
         opacity: 0.5,

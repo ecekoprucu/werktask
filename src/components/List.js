@@ -31,7 +31,7 @@ const List = ({title, cards, listId}) => {
                         {cards.length}
                 </span>
             </div>
-           <div style={{width: '100%', border: '1px dashed #474646', padding: '1em'}}>
+           <div style={{width: '100%', border: '1px dashed #474646', padding: '1em', borderRadius: 4}}>
                <Button type='inlineButton' action="add" formOpen={false} listType={listId} listId={listId} />
            </div>
          </div>
