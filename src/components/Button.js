@@ -13,7 +13,7 @@ const Button = (props) => {
         list: props.listId ? props.listId : 0
     })
     const showButton = () => {
-        if(props.action!=='edit') {
+        if(!props.formOpen) {
             return <button style={props.type === 'inlineButton' ? styles.button : styles.secondButton} onClick={openForm}> {props.type === 'inlineButton' ? '+ Add' : 'New Task'}</button>
         } else return null;
     }
@@ -106,7 +106,10 @@ const styles = {
         color: '#fff',
         padding: 10,
         border: 0,
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontFamily: 'Poppins',
+        opacity: 0.5,
+        fontSize: 14
     },
     secondButton: {
         background: 'linear-gradient(97.24deg, #234CA7 -24.31%, #EA596E 131.07%)',
@@ -135,6 +138,7 @@ const styles = {
         padding: 20,
         display: 'flex',
         flexDirection: 'column',
+        zIndex: 2
     },
     input: {
         height: 25,
