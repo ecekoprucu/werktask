@@ -44,7 +44,7 @@ const styles = {
     },
     title: {
         color: '#fff',
-        padding: '1em',
+        padding: '0.5em 1em',
         width: '50%',
         borderRadius: 5,
         marginBottom: '1em',
