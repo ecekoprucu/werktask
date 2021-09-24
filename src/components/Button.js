@@ -14,7 +14,7 @@ const Button = (props) => {
     })
     const showButton = () => {
         if(!props.formOpen) {
-            return <button style={props.type === 'inlineButton' ? styles.button : styles.secondButton} onClick={openForm}> {props.type === 'inlineButton' ? '+ Add' : 'New Task'}</button>
+            return props.action === 'add' ? <button style={props.type === 'inlineButton' ? styles.button : styles.secondButton} onClick={openForm}> {props.type === 'inlineButton' ? '+ Add' : 'New Task'}</button> : null
         } else return null;
     }
 
